@@ -25,6 +25,7 @@ class Details extends Component {
                 <div className='col-10 mx-auto col-md-6 my-3'>
                   <img src={img} className='img-fluid' alt='product'/>
                 </div>
+
                 {/* product text */}
                 <div className='col-10 mx-auto col-md-6 my-3 text-capitalize'>
                   <h2>model: {title}</h2>
@@ -39,12 +40,14 @@ class Details extends Component {
                   </h4>
                   <p className='text-capitalize font-weight-bold mt-3 mb-0'>some info about product:</p>
                   <p className='text-muted lead'>{info}</p>
+                  
                   {/* buttons */}
                   <div>
                     <Link to='/'>
                       <ButtonContainer>back to products</ButtonContainer>
                     </Link>
                     <ButtonContainer
+                      cart
                       disabled={inCart ? true: false}
                       onClick={() => {
                         value.addToCart(id)
